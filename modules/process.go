@@ -90,7 +90,6 @@ func TestendPath(method string, URL string, proxy string, addheaders []header) {
 	wg.Wait()
 }
 
-// 将http.mid_path加在url中间
 func TestmidPath(method string, URL string, proxy string, addheaders []header) {
 	fmt.Println()
 	fmt.Println("\033[32m[*] Testing midpath by "+method+"-method", "\033[0m")

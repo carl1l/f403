@@ -16,7 +16,6 @@ var (
 	cfgFile   string   //配置文件
 )
 
-// rootCmd 代表没有调用子命令时的基础命令
 var rootCmd = &cobra.Command{
 	Use:   "f403",
 	Short: "f403 is a tool to bypass 40X response codes.",

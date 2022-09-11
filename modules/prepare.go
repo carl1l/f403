@@ -22,12 +22,10 @@ func Init(URL string, proxy string, AddHeader []string, bypassip []string) {
 	if URL[len(URL)-1:] != "/" {
 		URL = URL + "/"
 	}
-	//如果url没有http或者https,则添加http
 	if !strings.HasPrefix(URL, "http://") && !strings.HasPrefix(URL, "https://") {
 		URL = "http://" + URL
 	}
 
-	//判断是否有代理
 	if proxy != "" {
 		fmt.Println("\033[34m[+] Using proxy: ", proxy, "\033[0m")
 	}
@@ -42,7 +40,6 @@ func Init(URL string, proxy string, AddHeader []string, bypassip []string) {
 			headers = append(headers, header{split[0], split[1]})
 		}
 	}
-	//判断是否有添加的ip
 	if len(bypassip) != 0 {
 		fmt.Println("\033[34m[+] Using bypass ip: ", bypassip, "\033[0m")
 	}
@@ -53,8 +50,6 @@ func Init(URL string, proxy string, AddHeader []string, bypassip []string) {
 	TestendPath("POST", URL, proxy, headers)
 	TestmidPath("GET", URL, proxy, headers)
 	TestmidPath("POST", URL, proxy, headers)
-
-	//fmt.Println(Request("GET", URL, proxy, headers))
 
 }
 

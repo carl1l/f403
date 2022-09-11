@@ -9,7 +9,7 @@ f403是一款用于渗透测试中对40x页面进行bypass并发扫描，采用g
 #### 参数:
 
 ```
- -a, --AddHeader strings   the headers you will add,for explame cookie:123,Referer:https://www.baidu.com
+  -a, --AddHeader strings   the headers you will add,for explame cookie:123,Referer:https://www.baidu.com
   -b, --bypassip strings    the ip or ips you will add behind some header like x-client-ip: 192.168.1.1,for example,-b 192.168.1.1,30.1.1.1 and the default value 127.0.0.1,localhost
   -h, --help                help for f403
   -p, --proxy string        the proxy you will use,support http and socks5 ,for example: -p http://127.0.0.1:8080 or -p socks5://127.0.0.1:8080
