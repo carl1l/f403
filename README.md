@@ -16,7 +16,7 @@ f403是一款用于渗透测试中对40x页面进行bypass并发扫描，采用g
   -u, --url string          the target url
 ```
 
-其中bypass语句配置文件在f403.yaml中,可自行添加或删除
+其中bypass语句配置文件在f403.yaml中,可自行添加或删除，若直接下载releases，请同时手动添加f403.yaml
 
 #### example:
 
