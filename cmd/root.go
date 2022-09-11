@@ -44,7 +44,8 @@ func initConfig() {
 	if cfgFile != "" {
 		viper.SetConfigFile(cfgFile)
 	} else {
-		viper.AddConfigPath(os.Getenv("PWD"))
+		//viper.AddConfigPath(os.Getenv("PWD"))
+		viper.AddConfigPath("./")
 		viper.SetConfigType("yaml")
 		viper.SetConfigName("f403")
 	}
