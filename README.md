@@ -32,5 +32,5 @@ f403是一款用于渗透测试中对40x页面进行bypass并发扫描，采用g
 ./f403 -u http://www.google.com/admin/ -a cookie:123,Origin:https://30.110.0.0 -p http://127.0.0.1:60090 -b 39.122.1.1
 ```
 
-![](/Users/carl/code/public/f403/pic/1.png)
+![](./pic/1.png)
 
