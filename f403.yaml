@@ -44,10 +44,10 @@ http:
     - "%09"
     - "%0a"
     - "#"
-  mid_path: #like http://www.baidu.com/abc/ --->    http://www.baidu.commid_dpath/abc/
+  mid_path: #like http://www.baidu.com/abc/ --->    http://www.baidu.com/mid_dpath/abc/
     - "/"
-    - "/."
-    - "/..;"
+    - "."
+    - "..;"
     - ".;"
-    - ";/"
-    - "//;/"
+    - ";"
+    - "//;"
