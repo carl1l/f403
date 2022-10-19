@@ -45,9 +45,9 @@ http:
     - "%0a"
     - "#"
   mid_path: #like http://www.baidu.com/abc/ --->    http://www.baidu.com/mid_dpath/abc/
-    - "/"
     - "."
     - "..;"
     - ".;"
     - ";"
-    - "//;"
+    - "/;"
+    - "#/.."

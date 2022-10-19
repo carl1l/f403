@@ -7,7 +7,6 @@ import (
 	"sync"
 )
 
-// 请求协议测试
 func TestMethods(URL string, proxy string, headers []header) {
 	fmt.Println()
 	fmt.Println("\033[32m[*] Testing methods: \033[0m")
@@ -47,7 +46,6 @@ func Testheaders(method string, URL string, proxy string, addheaders []header, b
 		for _, every := range TestHeaders.([]interface{}) {
 			go func(every string, ip string) {
 				defer wg.Done()
-				//将请求头与ip拼接
 				headers := append(addheaders, header{every, ip})
 				statusCode, respone, err := Request(method, URL, proxy, headers)
 				if err != nil {
@@ -102,14 +100,15 @@ func TestmidPath(method string, URL string, proxy string, addheaders []header) {
 			defer wg.Done()
 			u, _ := url.Parse(URL)
 			u.Path = every + u.Path
-			statusCode, respone, err := Request(method, u.String(), proxy, addheaders)
+			Url := u.Scheme + "://" + u.Host + "/" + u.Path
+			statusCode, respone, err := Request(method, Url, proxy, addheaders)
 			if err != nil {
-				fmt.Println("\033[31m[-] ", len(respone), every, err, "\033[0m")
+				fmt.Println("\033[31m[-] ", len(respone), Url, err, "\033[0m")
 			} else {
 				if statusCode/100 == 2 {
-					fmt.Println("\033[32m[+] ", statusCode, len(respone), u.String(), "\033[0m")
+					fmt.Println("\033[32m[+] ", statusCode, len(respone), Url, "\033[0m")
 				} else {
-					fmt.Println("\033[31m[-] ", statusCode, len(respone), u.String(), "\033[0m")
+					fmt.Println("\033[31m[-] ", statusCode, len(respone), Url, "\033[0m")
 				}
 			}
 		}(every.(string))
