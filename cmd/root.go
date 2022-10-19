@@ -37,7 +37,7 @@ func init() {
 	rootCmd.MarkFlagRequired("url")
 	rootCmd.PersistentFlags().StringVarP(&proxy, "proxy", "p", "", "the proxy you will use,support http and socks5 ,for example: -p http://127.0.0.1:8080 or -p socks5://127.0.0.1:8080")
 	rootCmd.PersistentFlags().StringSliceVarP(&AddHeader, "AddHeader", "a", []string{}, "the headers you will add,for explame cookie:123,Referer:https://www.baidu.com")
-	rootCmd.PersistentFlags().StringSliceVarP(&bypassip, "bypassip", "b", []string{}, "the ip or ips you will add behind some header like x-client-ip: 192.168.1.1,for example,-b 192.168.1.1,30.1.1.1 and the default value 127.0.0.1,localhost")
+	rootCmd.PersistentFlags().StringSliceVarP(&bypassip, "bypassip", "b", []string{}, "the ip you will add behind some header like x-client-ip: 192.168.1.1,for example,-b 192.168.1.1,30.1.1.1 and the default value 127.0.0.1,localhost")
 }
 
 func initConfig() {
