@@ -55,7 +55,6 @@ func Init(URL string, proxy string, AddHeader []string, bypassip []string) {
 
 // 封装请求
 func Request(method string, URL string, proxy string, headers []header) (statusCode int, response []byte, err error) {
-	//判断方法是否为空
 	if method == "" {
 		method = "GET"
 	}
@@ -75,10 +74,10 @@ func Request(method string, URL string, proxy string, headers []header) (statusC
 	if err != nil {
 		return 0, nil, err
 	}
-	//处理添加的请求头
+
+	req.Header.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
 	for _, header := range headers {
 		req.Header.Add(header.key, header.value)
-		req.Header.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
 	}
 	res, err := client.Do(req)
 	if err != nil {

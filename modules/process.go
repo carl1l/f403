@@ -90,6 +90,7 @@ func TestendPath(method string, URL string, proxy string, addheaders []header) {
 
 func TestmidPath(method string, URL string, proxy string, addheaders []header) {
 	fmt.Println()
+	fmt.Println()
 	fmt.Println("\033[32m[*] Testing midpath by "+method+"-method", "\033[0m")
 	fmt.Println()
 	Testmidpath := viper.Get("http.mid_path")
