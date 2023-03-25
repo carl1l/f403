@@ -34,20 +34,18 @@ http:
     - X-Remote-Addr
     - X-Remote-IP
     - X-SSL-Client-IP
-  end_path: #like http://www.baidu.com/abc/ ---> http://www.baidu.com/abc/end_path
-    - "?"
-    - "??"
+  end_path: #like http://www.baidu.com/abc ---> http://www.baidu.com/abcend_path
+    - "/?"
+    - "/??"
+    - "/.."
+    - "/./"
+    - "/%20"
+    - "/%09"
+    - "/%0a"
+    - "/#"
+  mid_path: #like http://www.baidu.com/abc/ --->    http://www.baidu.com/mid_dpath/abc/
     - "."
-    - ".."
-    - "./"
-    - "%20"
-    - "%09"
-    - "%0a"
-    - "#"
-  mid_path: #like http://www.baidu.com/abc/ --->    http://www.baidu.commid_dpath/abc/
-    - "/"
-    - "/."
-    - "/..;"
+    - "..;"
     - ".;"
     - ";/"
-    - "//;/"
+    - "/;/"
