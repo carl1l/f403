@@ -61,13 +61,13 @@ f403是一款用于渗透测试中对40x页面进行bypass测试的扫描工具�
 简单用法:
 
 ```
-./f403 -u http://www.google.com/admin/
+./f403 -u http://www.baidu.com/admin/
 ```
 
 全参数用法:
 
 ```
-./f403 -u http://www.google.com/admin/ -a cookie:123,Origin:https://30.110.0.0 -p http://127.0.0.1:60090 -b 39.122.1.1
+./f403 -u http://www.baidu.com/asdf/admin/ -p http://127.0.0.1:8080 -a 'cookie: 123,Referer: https://www.baidu.com' -d 'admin=1&p=1' -b 1.1.1.1
 ```
 
 ![](./pic/1.png)
